@@ -34,51 +34,55 @@ const UserSchema = new mongoose.Schema({
 		unique: true,
 	},
 
-	address: {
-		zipCode: {
-			type: String,
-			required: true,
-		},
+	addresses: [
+		{
+			zipCode: {
+				type: String,
+				required: true,
+			},
 
-		street: {
-			type: String,
-			required: true,
-		},
+			street: {
+				type: String,
+				required: true,
+			},
 
-		number: {
-			type: Number,
-			required: true,
-		},
+			number: {
+				type: Number,
+				required: true,
+			},
 
-		complement: {
-			type: String,
-		},
+			complement: {
+				type: String,
+			},
 
-		referencePoint: {
-			type: String,
-		},
+			referencePoint: {
+				type: String,
+			},
 
-		nicknameAddress: {
-			type: String,
-			required: true,
+			nicknameAddress: {
+				type: String,
+				required: true,
+			},
 		},
-	},
+	],
 
-	cart: {
-		products: {
-			type: [mongoose.Types.ArraySubdocument],
-		},
+	cart: [
+		{
+			products: {
+				type: [mongoose.Types.ArraySubdocument],
+			},
 
-		quantity: {
-			type: Number,
-			default: 0,
-			min: [0],
-		},
+			quantity: {
+				type: Number,
+				default: 0,
+				min: [0],
+			},
 
-		value: {
-			type: mongoose.Types.Decimal128,
+			value: {
+				type: mongoose.Types.Decimal128,
+			},
 		},
-	},
+	],
 });
 
 export default mongoose.models.User || mongoose.model("User", UserSchema);

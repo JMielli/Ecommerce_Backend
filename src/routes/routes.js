@@ -1,17 +1,14 @@
-import Router from 'express'
+import Router from "express";
 
-import userController from '../controllers/userController.js'
-import productController from '../controllers/productController.js'
+import userController from "../controllers/userController.js";
+import productController from "../controllers/productController.js";
 
-
-const router = Router()
+const router = Router();
 
 // homepage
-router.get('/', (req, res) => {
-})
+router.get("/", (req, res) => {});
 
-router.use('/user', userController)
-router.use('/products', productController)
+router.use("/user", userController);
+router.use("/products", productController);
 
-
-export default router
+export default router;
