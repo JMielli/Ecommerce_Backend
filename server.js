@@ -1,14 +1,14 @@
-import app from './src/app.js'
-import DatabaseConnect from './src/utils/db.js'
+import app from "./src/app.js";
+import DatabaseConnect from "./src/utils/db.js";
 
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 
-dotenv.config()
-const PORT = process.env.PORT || 3000
+dotenv.config();
+const PORT = process.env.PORT || 3000;
 
 // Conexão com o Banco de Dados
-DatabaseConnect()
+DatabaseConnect();
 
 app.listen(PORT, () => {
-  console.log(`App online em: http://localhost:${PORT}`)
-})
+	console.log(`App online em: http://localhost:${PORT}`);
+});
